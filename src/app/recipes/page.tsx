@@ -5,10 +5,13 @@ import { Recipe } from '@/types'
 export default async function RecipesPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: { [key: string]: string | string[] | undefined } | Promise<{ [key: string]: string | string[] | undefined }>
 }) {
-  const tag = typeof searchParams.tag === 'string' ? searchParams.tag : ''
-  const meal = typeof searchParams.meal === 'string' ? searchParams.meal : ''
+  // Tunggu jika searchParams adalah Promise
+  const params = await searchParams;
+
+  const tag = typeof params.tag === 'string' ? params.tag : '';
+  const meal = typeof params.meal === 'string' ? params.meal : '';
 
   let recipesData
   if (tag) {

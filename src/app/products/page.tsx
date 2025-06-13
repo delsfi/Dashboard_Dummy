@@ -10,7 +10,7 @@ interface ProductsPageProps {
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 8;
 
 export default async function ProductsPage({ searchParams }: { searchParams: SearchParams }) {
   // Tunggu searchParams jika perlu
