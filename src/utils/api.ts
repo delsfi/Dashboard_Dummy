@@ -1,6 +1,6 @@
 import { Product, Recipe } from '@/types'
 
-export const fetchProducts = async (): Promise<{ products: Product[] }> => {
+export const fetchProducts = async (): Promise<{ products: Product[]; total: number; skip: number; limit: number }> => {
   const res = await fetch('https://dummyjson.com/products');
   return res.json();
 };

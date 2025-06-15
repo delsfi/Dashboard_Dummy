@@ -28,33 +28,39 @@ export default function SearchSort() {
   }
 
   return (
-    <div className="flex items-center space-x-4">
-      <form onSubmit={handleSearch}>
-        <div className="relative">
+    <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 w-full">
+      {/* Search Input - Full width on mobile, normal on desktop */}
+      <form onSubmit={handleSearch} className="w-full md:w-auto">
+        <div className="relative w-full">
           <input
             type="text"
             name="search"
             placeholder="Search products..."
-            className="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             defaultValue={searchParams.get('search') || ''}
           />
           <div className="absolute left-3 top-2.5 text-gray-400">
-            {/* Search icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
           </div>
         </div>
       </form>
       
-      <select 
-        onChange={handleSortChange}
-        defaultValue={searchParams.get('sort') || ''}
-        className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-      >
-        <option value="">Sort by</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-        <option value="rating-asc">Rating: Low to High</option>
-        <option value="rating-desc">Rating: High to Low</option>
-      </select>
+      {/* Sort Select - Full width on mobile, normal on desktop */}
+      <div className="w-full md:w-auto">
+        <select 
+          onChange={handleSortChange}
+          defaultValue={searchParams.get('sort') || ''}
+          className="w-full px-4 py-2 border border-gray500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">Sort by</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-asc">Rating: Low to High</option>
+          <option value="rating-desc">Rating: High to Low</option>
+        </select>
+      </div>
     </div>
   )
 }

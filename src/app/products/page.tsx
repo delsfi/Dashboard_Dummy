@@ -56,7 +56,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-800">Products</h1>
+        <h1 className="pr-5 text-3xl font-bold text-gray-800">Products</h1>
         <SearchSort />
       </div>
 
