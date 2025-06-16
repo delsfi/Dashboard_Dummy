@@ -41,7 +41,7 @@ export default function Navbar() {
           md:translate-x-0 md:relative`}
       >
         <div className="mb-8">
-          <h1 className="text-2xl font-bold">Modern Dashboard</h1>
+          <h1 className="text-2xl font-bold">Menu Dashboard</h1>
         </div>
         <ul className="space-y-2">
           <li>

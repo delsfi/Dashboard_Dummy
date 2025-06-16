@@ -2,7 +2,7 @@ interface DataCardProps {
   title: string
   value: number
   change: string
-  icon: string
+  icon: React.ReactNode
 }
 
 export default function DataCard({ title, value, change, icon }: DataCardProps) {
@@ -16,7 +16,7 @@ export default function DataCard({ title, value, change, icon }: DataCardProps) 
             {change} from last month
           </p>
         </div>
-        <div className="p-3 rounded-full bg-blue-50 text-blue-600 text-2xl">
+        <div className="p-3 rounded-full bg-blue-50 text-blue-600">
           {icon}
         </div>
       </div>

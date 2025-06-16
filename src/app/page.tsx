@@ -1,6 +1,7 @@
 import DataCard from '@/components/DataCard'
 import Charts from '@/components/Charts'
 import { fetchProducts, fetchCarts, fetchRecipes, fetchPosts } from '@/utils/api'
+import { Package, Utensils, ShoppingCart, FileText } from 'lucide-react'
 
 export default async function Dashboard() {
   const [products, carts, recipes, posts] = await Promise.all([
@@ -20,25 +21,25 @@ export default async function Dashboard() {
           title="Total Products" 
           value={products.total} 
           change="+12%"
-          icon="📦"
+          icon={<Package className="w-5 h-5 text-blue-600" />}
         />
         <DataCard 
           title="Total Recipes" 
           value={recipes.total} 
           change="+5%"
-          icon="🍳"
+          icon={<Utensils className="w-5 h-5 text-green-600" />}
         />
         <DataCard 
           title="Total Carts" 
           value={carts.total} 
           change="+8%"
-          icon="🛒"
+          icon={<ShoppingCart className="w-5 h-5 text-orange-600" />}
         />
         <DataCard 
           title="Total Posts" 
           value={posts.total} 
           change="+15%"
-          icon="📝"
+          icon={<FileText className="w-5 h-5 text-purple-600" />}
         />
       </div>
 

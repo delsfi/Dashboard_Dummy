@@ -1,6 +1,8 @@
 'use client'
 
+import { Cart, Product } from '@/types'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
+
 
 interface CategoryData {
   name: string
@@ -16,21 +18,6 @@ interface CartData {
   name: string
   total: number
   discounted: number
-}
-
-interface Product {
-  id: number
-  title: string
-  price: number
-  category: string
-  // Add other product properties as needed
-}
-
-interface Cart {
-  id: number
-  total: number
-  discountedTotal: number
-  // Add other cart properties as needed
 }
 
 interface ChartsProps {
@@ -94,6 +81,7 @@ export default function Charts({ products, carts }: ChartsProps) {
         </div>
       </div>
 
+      
       <div className="bg-white p-6 rounded-lg shadow">
         <h2 className="text-xl font-semibold mb-4">Top Products by Price</h2>
         <div className="h-80">
@@ -110,5 +98,7 @@ export default function Charts({ products, carts }: ChartsProps) {
         </div>
       </div>
     </div>
+
+    
   )
 }

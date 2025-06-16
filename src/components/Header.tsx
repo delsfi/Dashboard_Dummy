@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header className="bg-white shadow p-4">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-end">
         <div className="flex items-center space-x-4">
           <button className="p-2 rounded-full hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
